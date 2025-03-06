@@ -36,8 +36,11 @@ int orderCount = 0;
 service /shop on new http:Listener(8090) {
 
     // List available products.
-    resource function get products() returns Product[] {
+    resource function get products(@http:Header string testHeader) returns Product[] {
         log:printInfo("Fetching product list");
+
+        log:printInfo("Test header value: " + testHeader);
+
         return products.toArray();
     }
 
