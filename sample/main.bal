@@ -36,10 +36,16 @@ int orderCount = 0;
 service /shop on new http:Listener(8090) {
 
     // List available products.
-    resource function get products(@http:Header string testHeader) returns Product[] {
+    resource function get products(http:Request req) returns Product[] {
         log:printInfo("Fetching product list");
 
-        log:printInfo("Test header value: " + testHeader);
+        // Get a specific header
+        string|http:HeaderNotFoundError sampleHeader = req.getHeader("Sample-Header");
+        if (sampleHeader is http:HeaderNotFoundError) {
+            log:printError("Sample-Header header not found");
+        } else {
+            log:printInfo("Sample-Header header value: " + sampleHeader);
+        }
 
         return products.toArray();
     }
