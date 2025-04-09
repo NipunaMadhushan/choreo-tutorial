@@ -39,7 +39,6 @@ service /shop on new http:Listener(8090) {
     resource function get products(http:Request req) returns Product[] {
         log:printInfo("Fetching product list");
 
-        // Get a specific header
         string|http:HeaderNotFoundError sampleHeader = req.getHeader("Sample-Header");
         if (sampleHeader is http:HeaderNotFoundError) {
             log:printError("Sample-Header header not found");
