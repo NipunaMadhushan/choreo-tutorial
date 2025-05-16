@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerinax/prometheus as _;
 
 // Define data structures.
 type Product record {|
