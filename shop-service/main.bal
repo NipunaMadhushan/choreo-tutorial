@@ -34,7 +34,7 @@ int orderCount = 0;
 @display {
     label: "Shopping Service"
 }
-service /shop on new http:Listener(8090) {
+service /shop on new http:Listener(8081) {
 
     // List available products.
     resource function get products(http:Request req) returns Product[] {

@@ -4,7 +4,7 @@ import ballerina/log;
 import ballerina/io;
 import ballerina/lang.runtime;
 
-const int CLIENT_PORT = 8090;
+const int CLIENT_PORT = 8085;
 
 @display {
     id: "songs-client-service",
