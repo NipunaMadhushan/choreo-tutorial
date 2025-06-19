@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerinax/newrelic as _;
 
 // Define data structures.
 type Product record {|
