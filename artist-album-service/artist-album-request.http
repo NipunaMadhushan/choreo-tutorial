@@ -1,0 +1,15 @@
+### Add new album
+POST http://localhost:8090/songs/albums
+content-type: application/json
+
+{
+    "title": "Sarah Vaughan and Clifford Brown",
+    "artist": "Sarah Vaughan"
+}
+
+
+### Get users
+GET http://localhost:8090/songs/albums/Sarah%20Vaughan
+
+### Get users
+GET http://localhost:8090/songs/albums/falsename
