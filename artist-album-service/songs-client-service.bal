@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerinax/newrelic as _;
+import ballerina/observe as _;
 import ballerina/log;
 import ballerina/io;
 import ballerina/lang.runtime;
