@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerina/observe as _;
 import ballerinax/newrelic as _;
 
 // Define data structures.
