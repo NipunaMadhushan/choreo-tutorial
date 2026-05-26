@@ -2,7 +2,7 @@
 org = "nipunal"
 name = "artist_album_service"
 version = "0.1.0"
-distribution = "2201.8.3"
+distribution = "2201.13.4"
 
 [build-options]
 observabilityIncluded = true
