@@ -1,6 +1,8 @@
 import ballerina/http;
 import ballerina/log;
-import ballerinax/newrelic as _;
+import ballerina/observe as _;
+import ballerinax/metrics.logs as _;
+import ballerinax/jaeger as _;
 
 // Define data structures.
 type Product record {|
@@ -39,14 +41,6 @@ service /shop on new http:Listener(8081) {
     // List available products.
     resource function get products(http:Request req) returns Product[] {
         log:printInfo("Fetching product list");
-
-        // Get a specific header
-        string|http:HeaderNotFoundError sampleHeader = req.getHeader("Sample-Header");
-        if (sampleHeader is http:HeaderNotFoundError) {
-            log:printError("Sample-Header header not found");
-        } else {
-            log:printInfo("Sample-Header header value: " + sampleHeader);
-        }
 
         return products.toArray();
     }
