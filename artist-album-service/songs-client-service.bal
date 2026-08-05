@@ -4,7 +4,6 @@ import ballerinax/metrics.logs as _;
 import ballerina/otel as _;
 import ballerina/log;
 import ballerina/io;
-import ballerina/lang.runtime;
 
 const int CLIENT_PORT = 8085;
 
@@ -27,12 +26,9 @@ service /songs on new http:Listener(CLIENT_PORT) {
     }
 
     resource function get albums/[string artistName]() returns string|error? {
-        io:println("Artist name: " + artistName);
+        log:printInfo("Artist name: " + artistName);
         Album[] artistAlbums = check self.albumClient->/albums/[artistName].get();
-        foreach int i in 0...9 {
-            runtime:sleep(1000);
-        }
-        io:println("Artist albums: " + artistAlbums.toJsonString());
+        log:printInfo("Artist albums: " + artistAlbums.toJsonString());
         return artistAlbums.toJsonString();
     }
 }
