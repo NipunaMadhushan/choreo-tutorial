@@ -3,7 +3,6 @@ import ballerina/observe as _;
 import ballerinax/metrics.logs as _;
 import ballerina/otel as _;
 import ballerina/log;
-import ballerina/io;
 
 const int CLIENT_PORT = 8085;
 
