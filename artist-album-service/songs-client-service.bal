@@ -1,7 +1,7 @@
 import ballerina/http;
 import ballerina/observe as _;
 import ballerinax/metrics.logs as _;
-import ballerina/otel as _;
+import ballerinax/jaeger as _;
 import ballerina/log;
 
 const int CLIENT_PORT = 8085;
@@ -19,8 +19,8 @@ service /songs on new http:Listener(CLIENT_PORT) {
 
     resource function post albums(@http:Payload Album album) returns string|error? {
         log:printInfo("Adding album: " + album.toJsonString());
-        // http:Response res = check self.albumClient->/albums.post(album.toJsonString(), { "Content-Type": "application/json" });
-        http:Response res = check self.albumClient->post("/albums", album.toJsonString(), { "Content-Type": "application/json" });
+        http:Response res = check self.albumClient->/albums.post(album.toJsonString(), { "Content-Type": "application/json" });
+        // http:Response res = check self.albumClient->post("/albums", album.toJsonString(), { "Content-Type": "application/json" });
         log:printInfo("Response HTTP status code: " + res.statusCode.toString());
         return res.statusCode == 202 ? "Response HTTP status code: " + res.statusCode.toString() : error("Error occurred while adding album");
     }
