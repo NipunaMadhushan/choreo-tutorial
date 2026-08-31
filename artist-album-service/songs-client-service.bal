@@ -1,7 +1,7 @@
 import ballerina/http;
 import ballerina/observe as _;
 import ballerinax/metrics.logs as _;
-import ballerinax/jaeger as _;
+import ballerina/otel as _;
 import ballerina/log;
 
 const int CLIENT_PORT = 8085;
@@ -32,11 +32,3 @@ service /songs on new http:Listener(CLIENT_PORT) {
         return artistAlbums.toJsonString();
     }
 }
-
-// curl -X POST http://localhost:8090/songs/albums -H "Content-Type: application/json" -d '{"title": "Sarah Vaughan and Clifford Brown", "artist": "Sarah Vaughan"}'
-// curl -X GET http://localhost:8090/songs/albums/Sarah%20Vaughan
-
-// curl -X POST http://localhost:8090/songs/albums -H "Content-Type: application/json" -d '{"title": "Title", "artist": "Artist"}'
-// curl -X GET http://localhost:8090/songs/albums/Artist
-
-
