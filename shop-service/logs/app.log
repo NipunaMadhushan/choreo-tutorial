@@ -1,0 +1,3 @@
+ballerina: started publishing traces to Jaeger on data-prepper.observability.svc.cluster.local:4317
+error: failed to start server connector '0.0.0.0:8081': Address already in use
+	at ballerina.http.2.Listener:start(http_service_endpoint.bal:54)

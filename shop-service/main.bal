@@ -2,7 +2,7 @@ import ballerina/http;
 import ballerina/log;
 import ballerina/observe as _;
 import ballerinax/metrics.logs as _;
-import ballerinax/jaeger as _;
+import ballerina/otel as _;
 
 // Define data structures.
 type Product record {|
