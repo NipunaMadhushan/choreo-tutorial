@@ -1,9 +1,9 @@
 import ballerina/log;
 import ballerina/websocket;
 import ballerina/observe as _;
-// import ballerina/metrics.logs as _;
-// import ballerina/otel as _;
-import ballerinax/jaeger as _;
+import ballerina/metrics.logs as _;
+import ballerina/otel as _;
+// import ballerinax/jaeger as _;
 
 listener websocket:Listener chatEp = new (8092);
 
