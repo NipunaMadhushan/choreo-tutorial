@@ -18,8 +18,7 @@ endpoints:
     type: GRPC
     # +optional Network level visibility of the endpoint.
     # Accepted values: Project | Organization | Public (Default).
-    # Set to Project/Organization for internal-only gRPC traffic;
-    # add Public if external clients need to reach it directly.
+    # Choreo restricts GRPC-type endpoints to Project visibility only —
+    # Organization and Public are rejected at deploy time for this type.
     networkVisibilities:
       - Project
-      - Organization
