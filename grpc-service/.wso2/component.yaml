@@ -21,4 +21,4 @@ endpoints:
     # Choreo restricts GRPC-type endpoints to Project visibility only —
     # Organization and Public are rejected at deploy time for this type.
     networkVisibilities:
-      - Project
+      - Public
