@@ -1,4 +1,5 @@
 import ballerina/grpc;
+import ballerina/observe as _;
 import ballerinax/metrics.logs as _;
 import ballerina/otel as _;
 // import ballerinax/jaeger as _;
