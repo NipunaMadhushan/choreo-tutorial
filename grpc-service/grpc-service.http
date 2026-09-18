@@ -1,0 +1,21 @@
+POST http://localhost:8091/songs/albums
+Content-Type: application/json
+
+{
+  "title": "Thriller",
+  "artist": "Michael Jackson"
+}
+
+HTTP/1.1 415  - Unsupported Media Type
+content-type: text/plain
+grpc-status: INTERNAL
+grpc-message: Content-Type 'application/json' is not supported
+connection: close
+server: ballerina
+date: Fri, 18 Sep 2026 10:07:31 +0530
+content-encoding: gzip
+content-length: 74
+###
+GET http://localhost:8091/songs/albums/Michael%20Jackson
+###
+GET http://localhost:8091/songs/hello

@@ -1,0 +1,8 @@
+[package]
+org = "nipunal"
+name = "grpc_service"
+version = "0.1.0"
+distribution = "2201.13.6-20260901-114900-706230f1"
+
+[build-options]
+observabilityIncluded = true
