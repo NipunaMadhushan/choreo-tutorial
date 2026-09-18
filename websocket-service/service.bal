@@ -1,7 +1,7 @@
 import ballerina/log;
 import ballerina/websocket;
 import ballerina/observe as _;
-import ballerina/metrics.logs as _;
+import ballerinax/metrics.logs as _;
 import ballerina/otel as _;
 // import ballerinax/jaeger as _;
 
