@@ -2,7 +2,7 @@
 org = "nipunal"
 name = "hello_world_service"
 version = "0.1.0"
-distribution = "2201.14.0"
+distribution = "2201.13.7"
 
 [build-options]
 observabilityIncluded = true
