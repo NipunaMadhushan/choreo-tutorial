@@ -1,5 +1,5 @@
 import ballerina/http;
-import ballerina/io;
+import ballerina/log;
 
 const int PORT = 8086;
 
@@ -21,7 +21,7 @@ service /backend on new http:Listener(PORT) {
     }
 
     resource function get albums/[string artistName]() returns Album[]|error? {
-        io:println("artistName: " + artistName);
+        log:printInfo("artistName: " + artistName);
         Album[] artistAlbums = self.albums.filter(function (Album album) returns boolean {
             return album.artist == artistName;
         });
