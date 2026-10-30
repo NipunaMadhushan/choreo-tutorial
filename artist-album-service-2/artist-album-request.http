@@ -1,0 +1,52 @@
+### Add new album
+POST http://localhost:8085/songs/albums
+content-type: application/json
+
+{
+    "title": "Sarah Vaughan and Clifford Brown",
+    "artist": "Sarah Vaughan"
+}
+
+HTTP/1.1 201  - Created
+content-type: text/plain
+connection: close
+server: ballerina
+date: Thu, 29 Oct 2026 12:38:48 +0530
+content-encoding: gzip
+content-length: 56
+###
+GET http://localhost:8085/songs/albums/Sarah%20Vaughan
+
+HTTP/1.1 200  - OK
+content-type: text/plain
+connection: close
+server: ballerina
+date: Thu, 29 Oct 2026 12:30:28 +0530
+content-encoding: gzip
+content-length: 89
+###
+GET http://localhost:8085/songs/albums/falsename
+
+HTTP/1.1 200  - OK
+content-type: text/plain
+connection: close
+server: ballerina
+date: Thu, 29 Oct 2026 12:30:30 +0530
+content-encoding: gzip
+content-length: 28
+###
+DELETE http://localhost:8085/songs/album
+Content-Type: application/json
+
+{
+    "artist": "Artist Name",
+    "title": "Album Title"
+}
+
+HTTP/1.1 500  - Internal Server Error
+content-type: application/json
+connection: close
+server: ballerina
+date: Thu, 29 Oct 2026 12:38:52 +0530
+content-encoding: gzip
+content-length: 172
