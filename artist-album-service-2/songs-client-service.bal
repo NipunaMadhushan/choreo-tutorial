@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerina/otel as _;
 
 const int CLIENT_PORT = 8085;
 
