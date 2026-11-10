@@ -3,7 +3,7 @@ import ballerina/log;
 
 configurable string greeting = "Hello";
 
-public function main(string name = "World") {
+public function main(string name = "World") returns error? {
     io:println(string `${greeting}, ${name}!`);
     log:printInfo("Greeting sent", greeting = greeting, name = name);
 
