@@ -1,6 +1,7 @@
 import ballerina/http;
 import ballerina/io;
 import ballerina/log;
+import ballerina/lang.runtime;
 
 configurable string greeting = "Hello";
 configurable string apiBaseUrl = "https://httpbin.org";
@@ -25,4 +26,7 @@ public function main(string name = "World") returns error? {
     GreetingPayload payload = {greeting, name};
     json postResponse = check apiClient->post("/post", payload);
     log:printInfo("POST call succeeded", response = postResponse);
+
+    // Wait for the OTel batch exporter (~5s interval) to flush spans before exit.
+    runtime:sleep(6);
 }
