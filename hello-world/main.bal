@@ -28,5 +28,5 @@ public function main(string name = "World") returns error? {
     log:printInfo("POST call succeeded", response = postResponse);
 
     // Wait for the OTel batch exporter (~5s interval) to flush spans before exit.
-    runtime:sleep(6);
+    runtime:sleep(15);
 }
